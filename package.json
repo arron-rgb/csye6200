@@ -1,0 +1,20 @@
+{
+  "name": "csye6200",
+  "version": "1.0.0",
+  "description": "2020summer2 cyse6200课程资源整合",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "conventional-changelog": "^3.1.21"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/conventional-changelog"
+    }
+  }
+}
