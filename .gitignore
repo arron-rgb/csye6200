@@ -1,2 +1,5 @@
-./bin/
 .DS_STORE/
+/node_modules/
+/assignments/bin/
+/.idea/
+/.metadata/
