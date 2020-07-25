@@ -1,4 +1,4 @@
-package edu.neu.csye6200;
+package edu.neu.csye6200.bean;
 
 import java.util.HashMap;
 import java.util.Map;

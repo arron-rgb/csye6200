@@ -1,4 +1,4 @@
-package edu.neu.csye6200;
+package edu.neu.csye6200.bean;
 
 /**
  * API for each Task an employee is payed to complete. Each Task pays a fixed (flat-rate) number of hours at the

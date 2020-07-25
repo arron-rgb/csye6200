@@ -1,4 +1,6 @@
-package edu.neu.csye6200;
+package edu.neu.csye6200.factory;
+
+import edu.neu.csye6200.bean.AbstractTask;
 
 public abstract class AbstractTaskFactory {
   /**
