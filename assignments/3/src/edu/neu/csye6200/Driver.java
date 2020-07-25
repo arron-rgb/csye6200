@@ -1,8 +1,8 @@
 package edu.neu.csye6200;
 
-import edu.neu.csye6200.explodable.ExplodableModel;
-import edu.neu.csye6200.model.ExplosionModel;
-import edu.neu.csye6200.modela.ExplosionModelA;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * @author arronshentu
@@ -34,10 +34,17 @@ public class Driver {
   // My chemical formula is C4H8N8O8 and my hashcode is 1323165413
 
   public static void main(String[] args) {
-    ExplodableModel.demo();
-    System.out.println("------");
-    ExplosionModel.demo();
-    System.out.println("------");
-    ExplosionModelA.demo();
+    List<String> lines = new ArrayList<>();
+    lines.add("1,abc,234,ABC,3.14,end");
+    lines.add("2,def,234,DEF,1.414,end");
+    lines.add("3,ghi,234,GHI,7.9,end");
+    lines.forEach(System.out::println);
+    for (String inputLine : lines) {
+      Scanner in = new Scanner(inputLine);
+      in.useDelimiter(",");
+      in.nextInt();
+      in.nextDouble();
+    }
+    // Map
   }
 }

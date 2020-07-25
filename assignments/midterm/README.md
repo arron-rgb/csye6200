@@ -7,7 +7,7 @@
 ## 类的作用
 1. Task和TimeSheet两个抽象类显然属于POJO，所以只需要写两个类分别继承这两个抽象类即可
 2. TaskFactory和TimeSheetFactory两个工厂分别需要实现获取默认对象和解析csv格式的字符串获取对象的方法
-3. TimeSheet从类名和提供的注释可以得知，Sheet的作用为汇总Task。并且通过参数名taskName可以猜想，需要通过taskName去索引到Task，也就需要在TimeSheet中定义一个Map，在Map中维护所有的Task
+3. TimeSheet从类名和提供的注释可以得知，Sheet的作用为汇总Task。~~并且通过参数名taskName可以猜想，需要通过taskName去索引到Task，也就需要在TimeSheet中定义一个Map，在Map中维护所有的Task~~然而实际作业要求是放到一个list中，但map与list用taskName存放的区别仅仅在于map提供一个contains(key)方法，但本质与list迭代查找名字对应的task一致
 
 ## 需要写的代码
 1. 两个抽象基类的实体类
@@ -19,5 +19,5 @@
 1. 继承
 2. 工厂模式
 3. String的split方法
-4. Map的put/ remove及遍历方法
+4. ~~Map的put/ remove及遍历方法~~list的remove/ add及遍历方法
 5. int类型私有变量的更新

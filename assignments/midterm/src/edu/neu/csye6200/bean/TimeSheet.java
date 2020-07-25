@@ -1,15 +1,25 @@
 package edu.neu.csye6200.bean;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author arronshentu
  */
 public class TimeSheet extends AbstractTimeSheet {
-  private static final Map<String, AbstractTask> TASKS = new HashMap<>();
+  //
+  // 20 POINTS: Design a TimeSheet class:
+  // 1. Derived from AbstractTimeSheet
+  // 2. Include the following member in TimeSheet class:
+  private List<AbstractTask> tasks = null;
+
+  public TimeSheet() {}
 
   private void addTimeSheetHours(int time) {
+    if (tasks == null) {
+      tasks = new ArrayList<>();
+    }
+
     int timeSheetHours = getTimesheetHours();
     timeSheetHours += time;
     setTimesheetHours(timeSheetHours);
@@ -21,47 +31,57 @@ public class TimeSheet extends AbstractTimeSheet {
       return;
     }
     addTimeSheetHours(t.getFlatRateHours());
-    TASKS.putIfAbsent(t.getTaskName(), t);
+    tasks.add(t);
   }
 
   @Override
   public void clear() {
+    if (tasks == null) {
+      return;
+    }
+
     setTimesheetHours(0);
-    TASKS.clear();
+    tasks.clear();
   }
 
   @Override
   public void remove(String taskName) {
-    if (taskName.trim().isEmpty()) {
+    if (tasks == null) {
+      tasks = new ArrayList<>();
+    }
+
+    if (taskName == null || taskName.trim().isEmpty()) {
       return;
     }
-    TASKS.computeIfPresent(taskName, (key, value) -> {
-      addTimeSheetHours(-value.getFlatRateHours());
-      return null;
-    });
-    TASKS.remove(taskName);
+    for (AbstractTask task : tasks) {
+      if (taskName.equals(task.getTaskName())) {
+        addTimeSheetHours(-task.getFlatRateHours());
+        tasks.remove(task);
+      }
+    }
   }
 
   @Override
   public void remove(AbstractTask task) {
+    if (tasks == null) {
+      tasks = new ArrayList<>();
+    }
+
     if (task == null) {
       return;
     }
     addTimeSheetHours(-task.getFlatRateHours());
-    TASKS.remove(task.getTaskName());
+    tasks.remove(task);
   }
 
   @Override
   public void show() {
-    for (Map.Entry<String, AbstractTask> entry : TASKS.entrySet()) {
-      String k = entry.getKey();
-      AbstractTask v = entry.getValue();
-      if (v == null) {
-        TASKS.remove(k);
-      }
+    if (tasks == null) {
+      System.out.println();
+      return;
     }
 
-    System.out.printf("hours worked: %s\n", getTimesheetHours());
-    TASKS.forEach((key, value) -> System.out.println(value));
+    tasks.forEach(System.out::println);
   }
+
 }
