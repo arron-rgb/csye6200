@@ -1,5 +1,6 @@
 package edu.neu.csye6200.factory;
 
+import edu.neu.csye6200.bean.AutoTechTimeSheet;
 import edu.neu.csye6200.bean.TimeSheet;
 
 /**
@@ -12,12 +13,12 @@ public class TimeSheetFactory extends AbstractTimesheetFactory {
 
   private static class TimeSheetFactoryInstance {
     public TimeSheet getObject() {
-      return new TimeSheet();
+      return new AutoTechTimeSheet();
     }
 
     public TimeSheet getObject(String csvData) {
       String[] split = csvData.split(SPLIT_DEFAULT);
-      TimeSheet timeSheet = new TimeSheet();
+      TimeSheet timeSheet = new AutoTechTimeSheet();
       timeSheet.setTimesheetId(Integer.parseInt(split[0]));
       timeSheet.setTimesheetHours(Integer.parseInt(split[1]));
       timeSheet.setTimesheetOwnerName(split[2]);
