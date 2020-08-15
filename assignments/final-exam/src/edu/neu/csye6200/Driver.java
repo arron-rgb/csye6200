@@ -124,6 +124,7 @@ public class Driver {
     club.sortAndShow(Comparator.comparing(AbstractPerson::getWeightLossLbs), (person -> {
       int loss = person.getWeightLossLbs();
       loss = loss + 10;
+      person.setWeightLbs(person.getWeightLbs() - loss);
       printWithGraph(loss);
     }));
     club.sortAndShow(Comparator.comparing(AbstractPerson::getWeightLossLbs).reversed(), (person -> {
@@ -137,6 +138,7 @@ public class Driver {
     club.sortAndShow(Comparator.comparing(AbstractPerson::getWeightLossLbs), (person -> {
       int loss = person.getWeightLossLbs();
       loss = loss * 11;
+      person.setWeightLbs(person.getWeightLbs() - loss);
       printWithGraph(loss);
     }));
     club.sortAndShow(Comparator.comparing(AbstractPerson::getWeightLossLbs).reversed(), (person -> {
