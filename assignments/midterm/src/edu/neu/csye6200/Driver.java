@@ -8,7 +8,6 @@ import edu.neu.csye6200.bean.Employee;
 public class Driver {
   public static void main(String[] args) {
     Employee.demo();
-    String
   }
 
 }

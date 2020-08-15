@@ -1,6 +1,6 @@
 package edu.neu.csye6200.bean;
 
-import static edu.neu.csye6200.CommonConstant.*;
+import static edu.neu.csye6200.Commons.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -63,11 +63,11 @@ public class Employee extends Person {
   }
 
   public Employee(String csvData) {
-    if (csvData.trim().isEmpty() || !csvData.contains(SPLIT_DEFAULT)) {
+    if (csvData.trim().isEmpty() || !csvData.contains(COMMA)) {
       return;
     }
 
-    String[] split = csvData.split(SPLIT_DEFAULT);
+    String[] split = csvData.split(COMMA);
 
     setId(split[0]);
     setAge(Integer.parseInt(split[1]));
@@ -85,7 +85,7 @@ public class Employee extends Person {
 
   public static void demo() {
     System.out.println("\n\t" + Employee.class.getName() + ".demo()...");
-    List<String> csvDataStrings = new ArrayList<>(Arrays.asList(csvDataString.split(SEMICOLON)));
+    List<String> csvDataStrings = new ArrayList<>(Arrays.asList(CSV_DATA_STRING.split(SEMICOLON)));
 
     Employee obj = new Employee("1,17,Dan,Peters,101,20.0");
 

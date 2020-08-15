@@ -5,7 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/assignments/1/1.iml" filepath="$PROJECT_DIR$/assignments/1/1.iml" />
       <module fileurl="file://$PROJECT_DIR$/assignments/2/2.iml" filepath="$PROJECT_DIR$/assignments/2/2.iml" />
       <module fileurl="file://$PROJECT_DIR$/assignments/3/3.iml" filepath="$PROJECT_DIR$/assignments/3/3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/assignments/4/4.iml" filepath="$PROJECT_DIR$/assignments/4/4.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/csye6200.iml" filepath="$PROJECT_DIR$/.idea/csye6200.iml" />
+      <module fileurl="file://$PROJECT_DIR$/assignments/day-care/day-care.iml" filepath="$PROJECT_DIR$/assignments/day-care/day-care.iml" />
+      <module fileurl="file://$PROJECT_DIR$/assignments/final-exam/final-exam.iml" filepath="$PROJECT_DIR$/assignments/final-exam/final-exam.iml" />
       <module fileurl="file://$PROJECT_DIR$/assignments/midterm/midterm.iml" filepath="$PROJECT_DIR$/assignments/midterm/midterm.iml" />
     </modules>
   </component>

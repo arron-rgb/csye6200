@@ -1,6 +1,6 @@
 package edu.neu.csye6200.bean;
 
-import static edu.neu.csye6200.CommonConstant.SPLIT_DEFAULT;
+import static edu.neu.csye6200.Commons.COMMA;
 
 /**
  * @author arronshentu
@@ -11,11 +11,11 @@ public class BrakeJob extends Task {
 
   public BrakeJob(String csvData) {
 
-    if (csvData.trim().isEmpty() || !csvData.contains(SPLIT_DEFAULT)) {
+    if (csvData.trim().isEmpty() || !csvData.contains(COMMA)) {
       return;
     }
 
-    String[] split = csvData.split(SPLIT_DEFAULT);
+    String[] split = csvData.split(COMMA);
     // "1,15,BrakeOverhaul,Replace Brake Pads and Rotors”
     setTaskId(Integer.parseInt(split[0]));
     setFlatRateHours(Integer.parseInt(split[1]));
